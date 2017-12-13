@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-md-4">
                 <!--Category-->
+                <!-- prof did this -->
                 <div id="MainMenu">
                     <div id="menuTitle">
                         CATEGORIES
