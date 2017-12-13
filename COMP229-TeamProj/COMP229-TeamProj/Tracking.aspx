@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="COMP229_TeamProj._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Tracking.aspx.cs" Inherits="COMP229_TeamProj._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
@@ -7,8 +7,8 @@
                 <!--Category-->
                 <!-- prof did this -->
                 <div id="MainMenu">
-                    <div id="menuTitle">
-                        CATEGORIES
+                    <div class="sectionHeader">
+                        Categories
                     </div>
                     <div class="list-group panel">
                       <a href="#" class="list-group-item list-group-item-success" data-parent="#MainMenu">Item 1</a>
@@ -39,18 +39,20 @@
                 </div>
             </div>
             <div class="col-md-8">
+                <!--Banner-->
                 <div class="jumbotron">
+                    <h1>Banner</h1>
                 </div>
                 <div class="row">
+                    <div class="sectionHeader">
+                        New Products
+                    </div>
                     <div class="col-md-4">
-                        <h2>Getting started</h2>
-                        <p>
-                            ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                        </p>
-                        <p>
-                            <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                        </p>
+                        <div class="item">
+                            <span class="item-title"></span>
+                            <span class="item-price"></span>
+                            <span class="item-rate"></span>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <h2>Get more libraries</h2>

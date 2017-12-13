@@ -43,10 +43,11 @@ textarea {
     margin-top: -20px;
     border-radius:0px;
 }
-    #MainMenu > #menuTitle {
+    #MainMenu > .sectionHeader {
         background-color: #009587;
         color:white;
         font-size: 20px;
         font-weight:500;
         padding: 20px 18px;
+        text-transform:uppercase;
     }
