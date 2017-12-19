@@ -52,7 +52,7 @@ textarea {
 #MainMenu {
     background-color: white;
     margin-top: -20px;
-    border-radius:0px;
+    border-radius: 0;
 }
 .sectionHeader {
         background-color: #009587;
