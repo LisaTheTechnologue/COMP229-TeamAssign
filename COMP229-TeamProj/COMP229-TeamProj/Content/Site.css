@@ -10,16 +10,27 @@
     height: 70px;
 }
 
+.jumbotron {
+    background-image: url(https://i.imgur.com/KxRJw5d.jpg);
+    height: 381px;
+    border-radius:3px;
+    opacity:0.4;
+}
+#logo{
+    width:100px;
+}
+.lead {
+    margin-left:10px;
+    text-align: center;
+    opacity:0;
+}
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
 textarea {
     max-width: 280px;
 }
-.jumbotron {
-    height:650px;
-    background-color: #5d98eb;
-}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -43,7 +54,7 @@ textarea {
     margin-top: -20px;
     border-radius:0px;
 }
-    #MainMenu > .sectionHeader {
+.sectionHeader {
         background-color: #009587;
         color:white;
         font-size: 20px;

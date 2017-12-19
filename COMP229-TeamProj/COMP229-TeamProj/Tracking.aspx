@@ -10,37 +10,35 @@
                         Categories
                     </div>
                     <div class="list-group panel">
-                      <a href="#" class="list-group-item list-group-item-success" data-parent="#MainMenu">Item 1</a>
-                      <a href="#" class="list-group-item list-group-item-success" data-parent="#MainMenu">Item 2</a>
-                      <a href="#demo3" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Item 3 <i class="fa fa-caret-down"></i></a>
-                      <div class="collapse" id="demo3">
-                        <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">Subitem 1 <i class="fa fa-caret-down"></i></a>
-                        <div class="collapse list-group-submenu" id="SubMenu1">
-                          <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
-                          <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a>
-                          <a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1">Subitem 3 c <i class="fa fa-caret-down"></i></a>
-                          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
-                            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 1</a>
-                            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 2</a>
-                          </div>
-                          <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 4 d</a>
+                        <a href="#Sciences" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Sciences <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                        <div class="collapse" id="Sciences">
+                            <a href="javascript:;" class="list-group-item">Computer Science</a>
+                            <a href="javascript:;" class="list-group-item">Engineering</a>
+                            <a href="javascript:;" class="list-group-item">Earth Science</a>
                         </div>
-                        <a href="javascript:;" class="list-group-item">Subitem 2</a>
-                        <a href="javascript:;" class="list-group-item">Subitem 3</a>
-                      </div>
-                      <a href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Item 4  <i class="fa fa-caret-down"></i></a>
-                      <div class="collapse" id="demo4">
-                        <a href="#" class="list-group-item">Subitem 1</a>
-                        <a href="#" class="list-group-item">Subitem 2</a>
-                        <a href="#" class="list-group-item">Subitem 3</a>
-                      </div>
+                        <a href="#" class="list-group-item list-group-item-success" data-parent="#MainMenu">Nursing</a>
+                        <a href="#Business" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Business <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                        <div class="collapse" id="Business">
+                            <a href="javascript:;" class="list-group-item">Accounting </a>
+                            <a href="javascript:;" class="list-group-item">Marketing</a>
+                            <a href="javascript:;" class="list-group-item">Human Resources</a>
+                        </div>
+                        <a href="#social" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Social Sciences <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                        <div class="collapse" id="social">
+                            <a href="#" class="list-group-item">Criminology</a>
+                            <a href="#" class="list-group-item">Psychology</a>
+                            <a href="#" class="list-group-item">Sociology</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-8">
                 <!--Banner-->
                 <div class="jumbotron">
-                    <h1>Banner</h1>
+                    <div class="lead">
+                        <img src="https://i.imgur.com/2ExLqir.png" alt="logo" id="logo" />
+                        <p>Knowledge has a beginning <br /> but no end</p>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="sectionHeader">
