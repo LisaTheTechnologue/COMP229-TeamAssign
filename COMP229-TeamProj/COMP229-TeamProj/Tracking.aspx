@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Tracking.aspx.cs" Inherits="COMP229_TeamProj.Tracking" %>
-
+<%--need to check name of code behind and the inherit, both should be the same--%>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <!--Banner-->
@@ -49,9 +49,8 @@
             <asp:BoundField DataField="BOOKNAME" HeaderText="BookName" />
             <asp:BoundField DataField="AUTHORNAME" HeaderText="AuthorName" />
             <asp:BoundField DataField="PRICE" HeaderText="Price" />
-             <asp:BoundField DataField="PLOT" HeaderText="Plot" />
-             <asp:BoundField DataField="CATEGORY" HeaderText="Category" />
-            <asp:BoundField DataField="RATING" HeaderText="Rating" />
+           <asp:BoundField DataField="RATING" HeaderText="Rating" />
+
         </Columns>
     </asp:GridView>
       
