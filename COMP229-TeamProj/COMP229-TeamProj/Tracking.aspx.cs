@@ -39,10 +39,24 @@ namespace COMP229_TeamProj
                 reader.Close();
                 thisConnection.Close();
             }
+            using (SqlConnection thisConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Comp229Assign03"].ConnectionString))
+            {
+                int studentID = Int32.Parse(Session["currentStudentID"].ToString());
+                using ( SqlCommand comm = new SqlCommand("Select BookName, AuthorName, Price, Rating from Books;", thisConnection))
+                {
+                    comm.Connection = thisConnection;
+                    SqlDataAdapter ad = new SqlDataAdapter(comm);
+                    DataSet ds = new DataSet();
+                    ad.Fill(ds, "xyz");
+                    itemsList.DataSource = ds.Tables[0];
+                itemsList.DataBind();
+                    
+                }
+            }
         }
         protected void itemList_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 
         }
     }
-}
+}=
