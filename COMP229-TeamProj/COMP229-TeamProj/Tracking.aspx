@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Tracking.aspx.cs" Inherits="COMP229_TeamProj._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Tracking.aspx.cs" Inherits="COMP229_TeamProj.Tracking" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
@@ -38,9 +38,27 @@
             <div class="col-md-4">Business</div>
             <div class="col-md-4">Nursing</div>
         </div>
+        <div>
         <!--Display Item List-->
-        <div id="items">
-            <asp:DataList ID="itemsList" runat="server" RepeatColumns="2" RepeatDirection="Horizontal">
+      <div>
+        </div>
+            </div>
+        </div>
+      <asp:GridView ID ="itemsList" runat="server" AutoGenerateColumns="False">
+         <Columns>
+            <asp:BoundField DataField="BOOKNAME" HeaderText="BookName" />
+            <asp:BoundField DataField="AUTHORNAME" HeaderText="AuthorName" />
+            <asp:BoundField DataField="PRICE" HeaderText="Price" />
+             <asp:BoundField DataField="PLOT" HeaderText="Plot" />
+             <asp:BoundField DataField="CATEGORY" HeaderText="Category" />
+            <asp:BoundField DataField="RATING" HeaderText="Rating" />
+        </Columns>
+    </asp:GridView>
+      
+        
+           
+      
+            <%--<asp:DataList ID="itemsList" runat="server" RepeatColumns="2" RepeatDirection="Horizontal">
                 <ItemTemplate>
                     <div class="item-img">
                         <img src="<%#Eval("ImgURL")%>" alt="<%#Eval("Name")%>" />
@@ -57,7 +75,7 @@
                 <SeparatorTemplate>
                     <hr />
                 </SeparatorTemplate>
-            </asp:DataList>
-        </div>
-    </div>
+            </asp:DataList>--%>
+       
+    
 </asp:Content>
