@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -26,19 +27,7 @@ namespace COMP229_TeamProj
 
         private void GetBooks()
         {
-            // See how we can use a using statement rather than try-catch (this will close and dispose the connection similarly to a finally block
-            using (thisConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["COMP229_Project"].ConnectionString))
-            {
-                SqlCommand comm = new SqlCommand("Select BookName, AuthorName, Price, Rating from Books;", thisConnection);
-                thisConnection.Open();
-                SqlDataReader reader = comm.ExecuteReader();
-
-                itemsList.DataSource = reader;
-                itemsList.DataBind();
-
-                reader.Close();
-                thisConnection.Close();
-            }
+            
             using (SqlConnection thisConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Comp229Assign03"].ConnectionString))
             {
                 int studentID = Int32.Parse(Session["currentStudentID"].ToString());
