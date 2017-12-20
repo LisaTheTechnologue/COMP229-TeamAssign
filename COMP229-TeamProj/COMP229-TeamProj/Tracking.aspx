@@ -2,78 +2,62 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
+        <!--Banner-->
+        <div class="jumbotron">
+            <div class="lead">
+                <img src="https://i.imgur.com/2ExLqir.png" alt="logo" id="logo" />
+                <p>
+                    Knowledge has a beginning
+                            <br />
+                    but no end
+                </p>
+            </div>
+        </div>
+        <!--New Products-->
         <div class="row">
+            <div class="sectionHeader">
+                New Products
+            </div>
             <div class="col-md-4">
-                <!--Category-->
-                <!-- prof did this -->
-                <div id="MainMenu">
-                    <div class="sectionHeader">
-                        Categories
-                    </div>
-                    <div class="list-group panel">
-                      <a href="#" class="list-group-item list-group-item-success" data-parent="#MainMenu">Item 1</a>
-                      <a href="#" class="list-group-item list-group-item-success" data-parent="#MainMenu">Item 2</a>
-                      <a href="#demo3" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Item 3 <i class="fa fa-caret-down"></i></a>
-                      <div class="collapse" id="demo3">
-                        <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">Subitem 1 <i class="fa fa-caret-down"></i></a>
-                        <div class="collapse list-group-submenu" id="SubMenu1">
-                          <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
-                          <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a>
-                          <a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1">Subitem 3 c <i class="fa fa-caret-down"></i></a>
-                          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
-                            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 1</a>
-                            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 2</a>
-                          </div>
-                          <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 4 d</a>
-                        </div>
-                        <a href="javascript:;" class="list-group-item">Subitem 2</a>
-                        <a href="javascript:;" class="list-group-item">Subitem 3</a>
-                      </div>
-                      <a href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Item 4  <i class="fa fa-caret-down"></i></a>
-                      <div class="collapse" id="demo4">
-                        <a href="#" class="list-group-item">Subitem 1</a>
-                        <a href="#" class="list-group-item">Subitem 2</a>
-                        <a href="#" class="list-group-item">Subitem 3</a>
-                      </div>
-                    </div>
+                <div class="item">
                 </div>
             </div>
-            <div class="col-md-8">
-                <!--Banner-->
-                <div class="jumbotron">
-                    <h1>Banner</h1>
-                </div>
-                <div class="row">
-                    <div class="sectionHeader">
-                        New Products
-                    </div>
-                    <div class="col-md-4">
-                        <div class="item">
-                            <span class="item-title"></span>
-                            <span class="item-price"></span>
-                            <span class="item-rate"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <h2>Get more libraries</h2>
-                        <p>
-                            NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                        </p>
-                        <p>
-                            <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <h2>Web Hosting</h2>
-                        <p>
-                            You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                        </p>
-                        <p>
-                            <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                        </p>
-                    </div>
+            <div class="col-md-4">
+                <div class="item">
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="item">
+                </div>
+            </div>
+        </div>
+        <!--Menu-->
+        <div class="row">
+            <div class="sectionHeader">Category</div>
+            <div class="col-md-4">Technology</div>
+            <div class="col-md-4">Business</div>
+            <div class="col-md-4">Nursing</div>
+        </div>
+        <!--Display Item List-->
+        <div id="items">
+            <asp:DataList ID="itemsList" runat="server" RepeatColumns="2" RepeatDirection="Horizontal">
+                <ItemTemplate>
+                    <div class="item-img">
+                        <img src="<%#Eval("ImgURL")%>" alt="<%#Eval("Name")%>" />
+                    </div>
+                    <strong>Book:  </strong><%#Eval("BookName")%><br />
+                    <strong>Author:  </strong><%#Eval("AuthorName")%><br />
+                    <strong>Price: </strong><%#Eval("Price")%><br />
+                    <strong>Rating:</strong> <%#Eval("Rating")%><br />
+                    <asp:LinkButton ID="detailsButton" runat="server"
+                        Text='<%#"View more details about " + Eval("BookName")%>'
+                        CommandName="MoreDetailsPlease"
+                        CommandArgument='<%#Eval("ISBN")%>' />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <hr />
+                </SeparatorTemplate>
+            </asp:DataList>
         </div>
     </div>
 </asp:Content>
