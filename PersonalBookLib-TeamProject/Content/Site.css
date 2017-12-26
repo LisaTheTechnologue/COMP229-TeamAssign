@@ -82,3 +82,7 @@ item-details-list{
 .item-img {
     display: inline-block;
 }
+/*different color in same div*/
+.col-md-4:nth-of-type(odd) {
+    background:#aaf6fb;
+}

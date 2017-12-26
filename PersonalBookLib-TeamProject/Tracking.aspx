@@ -13,6 +13,27 @@
                 </p>
             </div>
         </div>
+        
+        <!--Menu-->
+        <div class="row">
+            <div class="sectionHeader">Category</div>
+            <div class="col-md-4">
+                <h4>Technology</h4>
+                <asp:ImageButton ID="Technology" runat="server" src="https://imgur.com/qHYRN0M" />
+                <p>It is knowledge that goes beyond the here and now knowledge of everyday experience to a higher plane of understanding…..In contrast, applied knowledge is practical knowledge that is produced by putting academic knowledge into practice.</p>
+            </div>
+            <div class="col-md-4">
+                
+                <h4>Business</h4>
+                <asp:ImageButton ID="Business"  runat="server" src="https://imgur.com/axYvedM"/>
+                <p>All businesses have access to an extensive pool of knowledge - whether this is their understanding of customers' needs and the business environment or the skills and experience of staff. The way a business gathers, shares and exploits this knowledge can be central to its ability to develop successfully.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Nursing</h4>
+                <asp:ImageButton ID="Nursing" runat="server" src="https://imgur.com/PqU48o8" />
+                <p>- Understanding knowledge use in everyday nursing practice is important to the improvement of educational preparation and quality in health care.nursing educators have invested heavily in developing a philosophy and conceptual framework specific to a given school of nursing, regardless of the level of nursing education. </p>
+            </div>
+        </div>
         <!--New Products-->
         <div class="row">
             <div class="sectionHeader">
@@ -30,13 +51,6 @@
                 <div class="item">
                 </div>
             </div>
-        </div>
-        <!--Menu-->
-        <div class="row">
-            <div class="sectionHeader">Category</div>
-            <div class="col-md-4">Technology</div>
-            <div class="col-md-4">Business</div>
-            <div class="col-md-4">Nursing</div>
         </div>
         <!--Display-->
         <asp:DataList ID="itemsList" runat="server" RepeatColumns="2" RepeatDirection="Horizontal">
