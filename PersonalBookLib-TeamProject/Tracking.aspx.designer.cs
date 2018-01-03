@@ -13,33 +13,6 @@ namespace PersonalBookLib_TeamProject {
     public partial class Tracking {
         
         /// <summary>
-        /// Technology control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Technology;
-        
-        /// <summary>
-        /// Business control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Business;
-        
-        /// <summary>
-        /// Nursing control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Nursing;
-        
-        /// <summary>
         /// itemsList control.
         /// </summary>
         /// <remarks>
