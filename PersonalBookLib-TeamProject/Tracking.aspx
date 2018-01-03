@@ -34,9 +34,9 @@
         <!--Menu-->
         <div class="row">
             <div class="sectionHeader">Category</div>
-            <div class="col-md-4">Technology</div>
-            <div class="col-md-4">Business</div>
-            <div class="col-md-4">Nursing</div>
+            <div class="col-md-4">Web Development</div>
+            <div class="col-md-4">Database Administration</div>
+            <div class="col-md-4">Java Programming</div>
         </div>
         <!--Display-->
         <asp:DataList ID="itemsList" runat="server" RepeatColumns="2" RepeatDirection="Horizontal">
