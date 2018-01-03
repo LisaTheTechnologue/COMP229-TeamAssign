@@ -23,8 +23,7 @@
                 <p>It is knowledge that goes beyond the here and now knowledge of everyday experience to a higher plane of understanding…..In contrast, applied knowledge is practical knowledge that is produced by putting academic knowledge into practice.</p>
             </div>
             <div class="col-md-4">
-                
-                <h4>Business</h4>
+                 <h4>Business</h4>
                 <asp:ImageButton ID="Business"  runat="server" src="https://imgur.com/axYvedM"/>
                 <p>All businesses have access to an extensive pool of knowledge - whether this is their understanding of customers' needs and the business environment or the skills and experience of staff. The way a business gathers, shares and exploits this knowledge can be central to its ability to develop successfully.</p>
             </div>
