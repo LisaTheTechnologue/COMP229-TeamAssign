@@ -70,19 +70,18 @@ textarea {
     padding: 20px 18px;
     text-transform: uppercase;
 }
+
 .book {
     background-color: lightgray;
 }
+
 .item-details {
-    display:inline-block;
-}
-item-details-list{
-    
-}
-.item-img {
     display: inline-block;
 }
-/*different color in same div*/
-.col-md-4:nth-of-type(odd) {
-    background:#aaf6fb;
+
+item-details-list {
+}
+
+.item-img {
+    display: inline-block;
 }
