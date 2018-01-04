@@ -10,7 +10,7 @@
         d.	Allow for quickly setting the item as owned/wanted/loaned, and changing between them.
         e.	Anonymous users may view owned items only, but will be prevented from making any changes.
 -->
-    <asp:DetailsView runat="server" ID="myBook" AutoGenerateColumns="false">
+    <asp:DetailsView runat="server" ID="myBook" AutoGenerateColumns="false" OnPageIndexChanging="myBook_PageIndexChanging">
         <Fields>
             <asp:TemplateField HeaderText="">
                 <ItemTemplate>
@@ -36,7 +36,7 @@
                         Text='<%# Eval("BookName")%>'></asp:Label>
                 </ItemTemplate>
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtBName" runat="server" Text='<%# Eval("BookName")%>'></asp:TextBox>
+                    <asp:TextBox ID="txtBName" runat="server" Text='<%# Bind("BookName")%>'></asp:TextBox>
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Author Name">
@@ -45,7 +45,7 @@
                         Text='<%# Eval("AuthorName")%>'></asp:Label>
                 </ItemTemplate>
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtAName" runat="server" Text='<%# Eval("AuthorName")%>'></asp:TextBox>
+                    <asp:TextBox ID="txtAName" runat="server" Text='<%# Bind("AuthorName")%>'></asp:TextBox>
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Publisher">
@@ -55,7 +55,7 @@
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtPub" runat="server"
-                        Text='<%# Eval("Publisher")%>'></asp:TextBox>                    
+                        Text='<%# Bind("Publisher")%>'></asp:TextBox>                    
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Price">
@@ -65,7 +65,7 @@
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtPrice" runat="server"
-                        Text='<%# Eval("Price")%>'></asp:TextBox>                    
+                        Text='<%# Bind("Price")%>'></asp:TextBox>                    
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Rating">
@@ -75,7 +75,7 @@
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtRate" runat="server"
-                        Text='<%# Eval("Rating")%>'></asp:TextBox>                    
+                        Text='<%# Bind("Rating")%>'></asp:TextBox>                    
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Plot">
@@ -85,7 +85,7 @@
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtPlot" runat="server"
-                        Text='<%# Eval("Plot")%>'></asp:TextBox>                    
+                        Text='<%# Bind("Plot")%>'></asp:TextBox>                    
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Category">
@@ -95,7 +95,7 @@
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtCat" runat="server"
-                        Text='<%# Eval("Category")%>'></asp:TextBox>                    
+                        Text='<%# Bind("Category")%>'></asp:TextBox>                    
                 </EditItemTemplate>
             </asp:TemplateField>            
         </Fields>

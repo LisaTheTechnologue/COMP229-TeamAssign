@@ -50,5 +50,9 @@ namespace PersonalBookLib_TeamProject
             }
         }
 
+        protected void myBook_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
     }
 }
