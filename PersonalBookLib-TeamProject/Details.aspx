@@ -10,7 +10,11 @@
         d.	Allow for quickly setting the item as owned/wanted/loaned, and changing between them.
         e.	Anonymous users may view owned items only, but will be prevented from making any changes.
 -->
-    <asp:DetailsView runat="server" ID="myBook" AutoGenerateColumns="false" OnPageIndexChanging="myBook_PageIndexChanging">
+    <asp:DetailsView runat="server" ID="myBook" AutoGenerateColumns="false" OnPageIndexChanging="myBook_PageIndexChanging" AutoGenerateRows="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
+        <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
+        <EditRowStyle BackColor="#2461BF" />
+        <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
         <Fields>
             <asp:TemplateField HeaderText="">
                 <ItemTemplate>
@@ -27,7 +31,7 @@
                     <asp:Label ID="lblBookID" Text='<%# Eval("ISBN") %>' runat="server"></asp:Label>
                 </ItemTemplate>
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtBookID" runat="server" Text='<%# Bind("ISBN") %>' MaxLength="10" />
+                    <asp:TextBox ID="txtBookID" runat="server" Text='<%#Eval("ISBN") %>' MaxLength="10" />
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Name">
@@ -36,7 +40,7 @@
                         Text='<%# Eval("BookName")%>'></asp:Label>
                 </ItemTemplate>
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtBName" runat="server" Text='<%# Bind("BookName")%>'></asp:TextBox>
+                    <asp:TextBox ID="txtBName" runat="server" Text='<%# Eval("BookName")%>'></asp:TextBox>
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Author Name">
@@ -99,5 +103,9 @@
                 </EditItemTemplate>
             </asp:TemplateField>            
         </Fields>
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
     </asp:DetailsView>
 </asp:Content>
