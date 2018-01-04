@@ -23,16 +23,23 @@
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtImg" runat="server"
-                        Text='<%# Eval("ImgURL")%>'></asp:TextBox>                    
+                        Text='<%# Bind("ImgURL")%>'></asp:TextBox>                    
                 </EditItemTemplate>
+                <InsertItemTemplate>
+                   <asp:TextBox ID="insertImg" runat="server"
+                        Text='<%# Bind("ImgURL")%>'></asp:TextBox>  
+                </InsertItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Book ID" Visible="True" InsertVisible="True">
                 <ItemTemplate>
                     <asp:Label ID="lblBookID" Text='<%# Eval("ISBN") %>' runat="server"></asp:Label>
                 </ItemTemplate>
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtBookID" runat="server" Text='<%#Eval("ISBN") %>' MaxLength="10" />
+                    <asp:TextBox ID="txtBookID" runat="server" Text='<%#Bind("ISBN") %>' MaxLength="10" />
                 </EditItemTemplate>
+                <InsertItemTemplate>
+                     <asp:TextBox ID="insertBookID" runat="server" Text='<%#Bind("ISBN") %>' MaxLength="10" />
+                </InsertItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Name">
                 <ItemTemplate>
@@ -40,8 +47,11 @@
                         Text='<%# Eval("BookName")%>'></asp:Label>
                 </ItemTemplate>
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtBName" runat="server" Text='<%# Eval("BookName")%>'></asp:TextBox>
+                    <asp:TextBox ID="txtBName" runat="server" Text='<%# Bind("BookName")%>'></asp:TextBox>
                 </EditItemTemplate>
+                <InsertItemTemplate>
+                     <asp:TextBox ID="insertBName" runat="server" Text='<%# Bind("BookName")%>'></asp:TextBox>
+                </InsertItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Author Name">
                 <ItemTemplate>
@@ -51,6 +61,9 @@
                 <EditItemTemplate>
                     <asp:TextBox ID="txtAName" runat="server" Text='<%# Bind("AuthorName")%>'></asp:TextBox>
                 </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="insertAName" runat="server" Text='<%# Bind("AuthorName")%>'></asp:TextBox>
+                </InsertItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Publisher">
                 <ItemTemplate>
@@ -101,11 +114,14 @@
                     <asp:TextBox ID="txtCat" runat="server"
                         Text='<%# Bind("Category")%>'></asp:TextBox>                    
                 </EditItemTemplate>
-            </asp:TemplateField>            
+            </asp:TemplateField> 
+                       
         </Fields>
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#EFF3FB" />
     </asp:DetailsView>
+    <asp:Button runat="server" Text="Edit" />
+    <asp:Button runat="server" Text="Update" />
 </asp:Content>
