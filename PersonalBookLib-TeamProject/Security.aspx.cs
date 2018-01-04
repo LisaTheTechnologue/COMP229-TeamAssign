@@ -11,7 +11,11 @@ namespace PersonalBookLib_TeamProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            RegisterUser();
+        }
+        protected void RegisterUser()
+        {
+            
         }
     }
 }

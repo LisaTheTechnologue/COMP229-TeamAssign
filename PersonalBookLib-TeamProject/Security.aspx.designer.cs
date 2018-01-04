@@ -13,12 +13,30 @@ namespace PersonalBookLib_TeamProject {
     public partial class Security {
         
         /// <summary>
-        /// registerForm control.
+        /// loginForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl registerForm;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginForm;
+        
+        /// <summary>
+        /// userID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText userID;
+        
+        /// <summary>
+        /// profileInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DetailsView profileInfo;
     }
 }
