@@ -17,7 +17,7 @@ namespace PersonalBookLib_TeamProject
             SqlConnection conn;
             SqlCommand comm_book;
             SqlDataReader reader;
-            string connectionString = ConfigurationManager.ConnectionStrings["Book"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Comp229_Project"].ConnectionString;
 
             // Initialize connection
             conn = new SqlConnection(connectionString);
@@ -51,5 +51,4 @@ namespace PersonalBookLib_TeamProject
         }
 
     }
-}
 }
