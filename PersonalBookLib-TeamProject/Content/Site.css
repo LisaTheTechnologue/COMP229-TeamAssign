@@ -50,6 +50,15 @@ textarea {
     }
 }
 
+/*Log In*/
+.form-control {
+    width: 190px;
+}
+
+.popover {
+    max-width: 280px;
+}
+
 /*Home*/
 .list-group.panel > .list-group-item {
     border-bottom-right-radius: 4px;
