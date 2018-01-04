@@ -13,7 +13,7 @@ namespace PersonalBookLib_TeamProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int book_ISBN = Convert.ToInt32(Request.QueryString["ISBN"]);
+            int book_ISBN = Convert.ToInt32(Request.QueryString["bookID"]);
             SqlConnection conn;
             SqlCommand comm_book;
             SqlDataReader reader;
@@ -35,7 +35,7 @@ namespace PersonalBookLib_TeamProject
                 reader = comm_book.ExecuteReader();
                 // bind the reader to DataList
                 //display the detail of book
-                myBook.DataSourceID = null;
+               
                 myBook.DataSource = reader;
                 myBook.DataBind();
                 //Close the reader
