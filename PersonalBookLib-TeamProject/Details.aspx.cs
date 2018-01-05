@@ -13,7 +13,12 @@ namespace PersonalBookLib_TeamProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack) return;
+            BindDetails();
+        }
 
+        private void BindDetails()
+        {
             int book_ISBN = Convert.ToInt32(Request.QueryString["bookID"]);
             SqlConnection conn;
             SqlCommand comm_book;
@@ -51,51 +56,50 @@ namespace PersonalBookLib_TeamProject
             }
         }
 
-        //protected void myBook_ModeChanging(object sender, DetailsViewModeEventArgs e)
-        //{
-        //    myBook.ChangeMode(e.NewMode);
-        //    BindDetails();
+        protected void myBook_ModeChanging(object sender, DetailsViewModeEventArgs e)
+        {
+            myBook.ChangeMode(e.NewMode);
+            BindDetails();
+        }
 
-        //}
+        protected void myBook_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
+        {
+            int bookID = Convert.ToInt32(Request.QueryString["bookID"]);
+            //int bookID = (int)myBook.DataKey.Value;
+            TextBox newBName =
+            (TextBox)myBook.FindControl("txtBName");
+            TextBox newAName =
+            (TextBox)myBook.FindControl("txtAName");
+            string update_BName = newBName.Text;
+            string update_AName = newAName.Text;
+            SqlConnection conn;
+            SqlCommand comm;
+            string connectionString =
+            ConfigurationManager.ConnectionStrings["Comp229_Project"].ConnectionString;
+            conn = new SqlConnection(connectionString);
+            comm = new SqlCommand("UPDATE Book" +
+            " SET BookName = @NewBookName, AuthorName = @NewAuthorName" +
+            " WHERE ISBN = @BookID", conn);
+            comm.Parameters.Add("@BookID", System.Data.SqlDbType.Int);
+            comm.Parameters["@BookID"].Value = bookID;
+            comm.Parameters.Add("@NewBookName", System.Data.SqlDbType.NVarChar, 50);
+            comm.Parameters["@NewBookName"].Value = update_BName;
+            comm.Parameters.Add("@NewAuthorName", System.Data.SqlDbType.NVarChar, 50);
+            comm.Parameters["@NewAuthorName"].Value = update_AName;
+            try
+            {
+                conn.Open();
+                comm.ExecuteNonQuery();
 
-        //protected void myBook_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
-        //{
-        //    int bookID = (int)myBook.DataKey.Value;
-        //    TextBox newBName =
-        //    (TextBox)myBook.FindControl("txtBName");
-        //    TextBox newCityTextBox =
-        //    (TextBox)myBook.FindControl("");
-        //    string newAddress = newBName.Text;
-        //    string newCity = newCityTextBox.Text;
-        //    SqlConnection conn;
-        //    SqlCommand comm;
-        //    string connectionString =
-        //    ConfigurationManager.ConnectionStrings[
-        //    "Dorknozzle"].ConnectionString;
-        //    conn = new SqlConnection(connectionString);
-        //    comm = new SqlCommand("UpdateEmployeeDetails", conn);
-        //    comm.CommandType = CommandType.StoredProcedure;
-        //    comm.Parameters.Add("EmployeeID", SqlDbType.Int);
-        //    comm.Parameters["EmployeeID"].Value = employeeId;
-        //    comm.Parameters.Add("NewAddress", SqlDbType.NVarChar, 50);
-        //    comm.Parameters["NewAddress"].Value = newAddress;
-        //    comm.Parameters.Add("NewCity", SqlDbType.NVarChar, 50);
-        //    comm.Parameters["NewCity"].Value = newCity;
-        //    try
-        //    {
-        //        conn.Open();
-        //        comm.ExecuteNonQuery();
-                
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //    employeeDetails.ChangeMode(DetailsViewMode.ReadOnly);
-        //    BindGrid();
-        //    BindDetails();
-
-        //}
+            }
+            finally
+            {
+                conn.Close();
+            }
+            myBook.ChangeMode(DetailsViewMode.ReadOnly);
+            //BindGrid();
+            BindDetails();
+        }
     }
 }
 
