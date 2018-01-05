@@ -10,7 +10,7 @@
         d.	Allow for quickly setting the item as owned/wanted/loaned, and changing between them.
         e.	Anonymous users may view owned items only, but will be prevented from making any changes.
 -->
-    <asp:DetailsView runat="server" ID="myBook" AutoGenerateColumns="false" AutoGenerateRows="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnItemUpdating="myBook_ItemUpdating" OnModeChanging="myBook_ModeChanging">
+    <asp:DetailsView runat="server" ID="myBook" AutoGenerateColumns="false"  CellPadding="4" ForeColor="#333333" GridLines="None" OnItemUpdating="myBook_ItemUpdating" OnModeChanging="myBook_ModeChanging">
         <AlternatingRowStyle BackColor="White" />
         <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
         <EditRowStyle BackColor="#2461BF" />
