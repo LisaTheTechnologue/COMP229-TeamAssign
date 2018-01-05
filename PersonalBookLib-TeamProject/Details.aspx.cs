@@ -13,6 +13,7 @@ namespace PersonalBookLib_TeamProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             int book_ISBN = Convert.ToInt32(Request.QueryString["bookID"]);
             SqlConnection conn;
             SqlCommand comm_book;
@@ -35,7 +36,7 @@ namespace PersonalBookLib_TeamProject
                 reader = comm_book.ExecuteReader();
                 // bind the reader to DataList
                 //display the detail of book
-               
+
                 myBook.DataSource = reader;
                 myBook.DataBind();
                 //Close the reader
@@ -50,9 +51,51 @@ namespace PersonalBookLib_TeamProject
             }
         }
 
-        protected void myBook_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        protected void myBook_ModeChanging(object sender, DetailsViewModeEventArgs e)
         {
+            myBook.ChangeMode(e.NewMode);
+            BindDetails();
+        }
 
+        protected void myBook_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
+        {
+            int bookID = (int)myBook.DataKey.Value;
+            TextBox newBName =
+            (TextBox)myBook.FindControl("txtBName");
+            TextBox newCityTextBox =
+            (TextBox)myBook.FindControl("");
+            string newAddress = newBName.Text;
+            string newCity = newCityTextBox.Text;
+            SqlConnection conn;
+            SqlCommand comm;
+            string connectionString =
+            ConfigurationManager.ConnectionStrings[
+            "Dorknozzle"].ConnectionString;
+            conn = new SqlConnection(connectionString);
+            comm = new SqlCommand("UpdateEmployeeDetails", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.Add("EmployeeID", SqlDbType.Int);
+            comm.Parameters["EmployeeID"].Value = employeeId;
+            comm.Parameters.Add("NewAddress", SqlDbType.NVarChar, 50);
+            comm.Parameters["NewAddress"].Value = newAddress;
+            comm.Parameters.Add("NewCity", SqlDbType.NVarChar, 50);
+            comm.Parameters["NewCity"].Value = newCity;
+            try
+            {
+                conn.Open();
+                comm.ExecuteNonQuery();
+                502 Build Your Own ASP.NET 4 Website Using C# & VB
+www.ebook777.com www.it - ebooks.info
+           Free ebooks ==> www.ebook777.com
+            }
+            finally
+            {
+                conn.Close();
+            }
+            employeeDetails.ChangeMode(DetailsViewMode.ReadOnly);
+            BindGrid();
+            BindDetails();
         }
     }
 }
+

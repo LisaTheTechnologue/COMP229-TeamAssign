@@ -10,7 +10,7 @@
         d.	Allow for quickly setting the item as owned/wanted/loaned, and changing between them.
         e.	Anonymous users may view owned items only, but will be prevented from making any changes.
 -->
-    <asp:DetailsView runat="server" ID="myBook" AutoGenerateColumns="false" OnPageIndexChanging="myBook_PageIndexChanging" AutoGenerateRows="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+    <asp:DetailsView runat="server" ID="myBook" AutoGenerateColumns="false" AutoGenerateRows="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnItemUpdating="myBook_ItemUpdating" OnModeChanging="myBook_ModeChanging">
         <AlternatingRowStyle BackColor="White" />
         <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
         <EditRowStyle BackColor="#2461BF" />
@@ -23,7 +23,8 @@
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtImg" runat="server"
-                        Text='<%# Bind("ImgURL")%>'></asp:TextBox>                    
+                        Text='<%# Bind("ImgURL")%>'></asp:TextBox>
+                                        
                 </EditItemTemplate>
                 <InsertItemTemplate>
                    <asp:TextBox ID="insertImg" runat="server"
@@ -74,6 +75,10 @@
                     <asp:TextBox ID="txtPub" runat="server"
                         Text='<%# Bind("Publisher")%>'></asp:TextBox>                    
                 </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="insertPub" runat="server"
+                        Text='<%# Bind("Publisher")%>'></asp:TextBox> 
+                </InsertItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Price">
                 <ItemTemplate>
@@ -84,6 +89,10 @@
                     <asp:TextBox ID="txtPrice" runat="server"
                         Text='<%# Bind("Price")%>'></asp:TextBox>                    
                 </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="insertPrice" runat="server"
+                        Text='<%# Bind("Price")%>'></asp:TextBox> 
+                </InsertItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Rating">
                 <ItemTemplate>
@@ -94,6 +103,10 @@
                     <asp:TextBox ID="txtRate" runat="server"
                         Text='<%# Bind("Rating")%>'></asp:TextBox>                    
                 </EditItemTemplate>
+                <InsertItemTemplate>
+                     <asp:TextBox ID="insertRate" runat="server"
+                        Text='<%# Bind("Rating")%>'></asp:TextBox> 
+                </InsertItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Plot">
                 <ItemTemplate>
@@ -104,6 +117,10 @@
                     <asp:TextBox ID="txtPlot" runat="server"
                         Text='<%# Bind("Plot")%>'></asp:TextBox>                    
                 </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="insertPlot" runat="server"
+                        Text='<%# Bind("Plot")%>'></asp:TextBox>  
+                </InsertItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Category">
                 <ItemTemplate>
@@ -114,14 +131,17 @@
                     <asp:TextBox ID="txtCat" runat="server"
                         Text='<%# Bind("Category")%>'></asp:TextBox>                    
                 </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="insertCat" runat="server"
+                        Text='<%# Bind("Category")%>'></asp:TextBox>   
+                </InsertItemTemplate>
             </asp:TemplateField> 
-                       
+            <asp:CommandField ShowEditButton="True" />           
         </Fields>
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#EFF3FB" />
     </asp:DetailsView>
-    <asp:Button runat="server" Text="Edit" />
-    <asp:Button runat="server" Text="Update" />
+   
 </asp:Content>
