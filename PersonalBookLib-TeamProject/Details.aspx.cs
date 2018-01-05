@@ -59,7 +59,8 @@ namespace PersonalBookLib_TeamProject
         protected void myBook_ModeChanging(object sender, DetailsViewModeEventArgs e)
         {
             myBook.ChangeMode(e.NewMode);
-            BindDetails();
+            BindDetails();
+
         }
 
         protected void myBook_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
@@ -98,7 +99,8 @@ namespace PersonalBookLib_TeamProject
             }
             myBook.ChangeMode(DetailsViewMode.ReadOnly);
             //BindGrid();
-            BindDetails();
+            BindDetails();
+
         }
     }
 }
