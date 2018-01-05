@@ -8,9 +8,15 @@
 }
 
 .nav-bar, .nav {
-    height: 50px;
+    height: 40px;
 }
-
+    .nav ul {
+        padding-right: 20px;
+        margin-right: 10px;
+    }
+    .navbar-brand {
+        margin-top:-20px;
+    }
 .jumbotron {
     background-image: url(https://i.imgur.com/KxRJw5d.jpg);
     border-radius: 3px;
