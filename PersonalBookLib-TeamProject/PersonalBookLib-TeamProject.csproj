@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\HezasLogo.png" />
+    <Content Include="Assets\logo.png" />
     <Content Include="Assets\logo32x32.ico" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
