@@ -19,10 +19,10 @@
         <Fields>
             <asp:TemplateField HeaderText="">
                 <ItemTemplate>
-                    <asp:Label ID="lblImg" runat="server"
-                        Text='<%# Eval("ImgURL")%>'></asp:Label>
+                    <asp:Image ID="lblImg" runat="server"
+                        ImageUrl='<%# Eval("ImgURL")%>'></asp:Image>
                 </ItemTemplate>
-                <EditItemTemplate>
+                <%--<EditItemTemplate>
                     <asp:TextBox ID="txtImg" runat="server"
                         Text='<%# Bind("ImgURL")%>'></asp:TextBox>
                                         
@@ -30,7 +30,7 @@
                 <InsertItemTemplate>
                    <asp:TextBox ID="insertImg" runat="server"
                         Text='<%# Bind("ImgURL")%>'></asp:TextBox>  
-                </InsertItemTemplate>
+                </InsertItemTemplate>--%>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Book ID" Visible="True" InsertVisible="True">
                 <ItemTemplate>
@@ -126,15 +126,15 @@
             <asp:TemplateField HeaderText="Category">
                 <ItemTemplate>
                     <asp:Label ID="lblCat" runat="server"
-                        Text='<%# Eval("Category")%>'></asp:Label>
+                        Text='<%# Eval("Status")%>'></asp:Label>
                 </ItemTemplate>
                 <EditItemTemplate>
                     <asp:TextBox ID="txtCat" runat="server"
-                        Text='<%# Bind("Category")%>'></asp:TextBox>                    
+                        Text='<%# Bind("Status")%>'></asp:TextBox>                    
                 </EditItemTemplate>
                 <InsertItemTemplate>
                     <asp:TextBox ID="insertCat" runat="server"
-                        Text='<%# Bind("Category")%>'></asp:TextBox>   
+                        Text='<%# Bind("Status")%>'></asp:TextBox>   
                 </InsertItemTemplate>
             </asp:TemplateField> 
             <asp:CommandField ShowEditButton="True" />           
