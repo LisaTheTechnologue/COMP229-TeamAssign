@@ -15,6 +15,7 @@ namespace PersonalBookLib_TeamProject
         {
             if (IsPostBack) return;
             BindDetails();
+            Comment_Display();
         }
 
         private void BindDetails()
@@ -47,6 +48,43 @@ namespace PersonalBookLib_TeamProject
                 //Close the reader
                 reader.Close();
 
+
+            }
+            finally
+            {
+                //close connection
+                conn.Close();
+            }
+        }
+        private void Comment_Display()
+        {
+            int book_ISBN = Convert.ToInt32(Request.QueryString["bookID"]);
+            SqlConnection conn;
+            SqlCommand comm_book;
+            SqlDataReader reader;
+            string connectionString = ConfigurationManager.ConnectionStrings["Comp229_Project"].ConnectionString;
+
+            // Initialize connection
+            conn = new SqlConnection(connectionString);
+            //create command
+            comm_book = new SqlCommand("select [ACCOUNT_ID],[USERNAME],[DESC] FROM Comment JOIN Account on Comment.ACCOUNT_ID = Account.USERID where ISBN = @book_ISBN", conn);
+            // add parameter into command
+            comm_book.Parameters.Add("@book_ISBN", System.Data.SqlDbType.Int);
+            comm_book.Parameters["@book_ISBN"].Value = book_ISBN;
+
+            try
+            {
+                //open connection
+                conn.Open();
+                //execute the command
+                reader = comm_book.ExecuteReader();
+                // bind the reader to DataList
+                //display the detail of book
+
+                Comment.DataSource = reader;
+                Comment.DataBind();
+                //Close the reader
+                reader.Close();
 
             }
             finally
@@ -102,6 +140,36 @@ namespace PersonalBookLib_TeamProject
             BindDetails();
 
         }
+
+        //protected void in_comment_Click(object sender, EventArgs e)
+        //{
+        //    int book_ISBN = Convert.ToInt32(Request.QueryString["bookID"]);
+        //    SqlConnection conn;
+        //    SqlCommand comm_book;
+        //    SqlDataReader reader;
+        //    string connectionString = ConfigurationManager.ConnectionStrings["Comp229_Project"].ConnectionString;
+
+        //    // Initialize connection
+        //    conn = new SqlConnection(connectionString);
+        //    //insert new comment into database
+        //    comm_book = new SqlCommand("INSERT INTO [dbo].[Comment] ([ISBN] , [DESC]) VALUES(@book_ISBN, @IN_COMMENT) ", conn);
+        //    // add parameter into command
+        //    comm_book.Parameters.Add("@book_ISBN", System.Data.SqlDbType.Int);
+        //    comm_book.Parameters["@book_ISBN"].Value = book_ISBN;
+        //    comm_book.Parameters.Add("@IN_COMMENT", System.Data.SqlDbType.NVarChar, 250);
+        //    comm_book.Parameters["@IN_COMMENT"].Value = Input_comment.Text;
+        //    try
+        //    {
+        //        conn.Open();
+        //        comm_book.ExecuteNonQuery();
+        //        Response.Redirect("Details.aspx");
+        //    }
+
+        //    finally
+        //    {
+        //        conn.Close();
+        //    }
+        //}
     }
 }
 
