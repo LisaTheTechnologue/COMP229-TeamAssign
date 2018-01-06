@@ -146,6 +146,13 @@
         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#EFF3FB" />
     </asp:DetailsView>
+    
+    <h1>Comments</h1>
+    <asp:DetailsView id="Comment" runat="server">
 
-   
+    </asp:DetailsView>
+   <%-- <h2>Input your comment here</h2>
+    <asp:TextBox ID="Input_comment" runat="server"></asp:TextBox>
+    <br />
+    <asp:Button ID="in_comment" runat="server" Text="Submit" OnClick="in_comment_Click" />--%>
 </asp:Content>
