@@ -1,18 +1,7 @@
 ﻿<%@ Page Title="Log In" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Security.aspx.cs" Inherits="PersonalBookLib_TeamProject.Security" %>
 
 <asp:Content ID="RegisBody" ContentPlaceHolderID="MainContent" runat="server">
-    <!--
-a.	User Registration must be included. 
-        A form will allow the user to enter profile information 
-        (username, password, email address, etc.), 
-        which will be stored in a database table.
-b.	A form will allow a registered user to Login.
-c.	Upon successful Login, other forms or controls will allow the user to Logout and/or modify his or her profile.
-d.	Site security will prevent non-registered (anonymous) users 
-        from modifying any item details.
--->
-
-    <!--Default: ASP.NET will assume the login page is Login.aspx unless we specify in <forms> tag-->
+    
     <asp:Label ID="pageTitle" runat="server" />
     <div id="loginForm" runat="server">
         <div class="form-group">

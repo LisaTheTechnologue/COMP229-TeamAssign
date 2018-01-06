@@ -67,6 +67,15 @@ namespace PersonalBookLib_TeamProject {
         protected global::System.Web.UI.WebControls.Button submitbtn;
         
         /// <summary>
+        /// registerbtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button registerbtn;
+        
+        /// <summary>
         /// register control.
         /// </summary>
         /// <remarks>
@@ -191,6 +200,15 @@ namespace PersonalBookLib_TeamProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegisterInfo;
+        
+        /// <summary>
+        /// profileInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DetailsView profileInfo;
         
         /// <summary>
         /// dbErrorMessage control.
