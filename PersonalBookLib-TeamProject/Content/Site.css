@@ -67,6 +67,13 @@ textarea {
     max-width: 280px;
 }
 
+.registerForm {
+    display:none;
+}
+
+.profile {
+    display:none;
+}
 /*Home*/
 .list-group.panel > .list-group-item {
     border-bottom-right-radius: 4px;

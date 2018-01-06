@@ -17,33 +17,72 @@ d.	Site security will prevent non-registered (anonymous) users
         <div class="form-group">
             <label class="control-label col-sm-2" for="userID">UserID:</label>
             <div class="col-sm-10">
-                <input runat="server" type="text" class="form-control" id="userID" placeholder="Enter userID">
+                <asp:TextBox runat="server" type="text" class="form-control" id="userID" placeholder="Enter userID"/>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                <asp:TextBox runat="server" class="form-control" id="pwd" placeholder="Enter password"/>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="checkbox">
-                    <label>
-                        <input type="checkbox">
-                        Remember me</label>
+                    <asp:CheckBox runat="server" ID="checkRemember" Text="Remember me"/>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <asp:Button runat="server" ID="submitbtn" class="btn btn-default" onclick="SubmitUser" Text="Submit" />
+            </div>
+            <div class="col-sm-offset-2 col-sm-10">
+                <asp:Button runat="server" ID="registerbtn" class="btn btn-default" onclick="RegisterUser" Text="Register" />
             </div>
         </div>
     </div>
+    
+
+    <!--Register-->
+    <asp:DetailsView ID="register" runat="server" DefaultMode="Insert"
+        CssClass="registerForm" AutoGenerateRows="false">
+        <Fields>
+            <asp:TemplateField HeaderText="User Name">
+                <InsertItemTemplate>
+                    <asp:TextBox ID="Username" runat="server" />
+                </InsertItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Password">
+                <InsertItemTemplate>
+                    <input ID="Password" runat="server" type="password"/>
+                </InsertItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="First Name">
+                <InsertItemTemplate>
+                    <asp:TextBox ID="Firstname" runat="server" />
+                </InsertItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Last Name">
+                <InsertItemTemplate>
+                    <asp:TextBox ID="Lastname" runat="server" />
+                </InsertItemTemplate>
+            </asp:TemplateField>
+            
+            <asp:TemplateField HeaderText="Email">
+                <InsertItemTemplate>
+                    <asp:TextBox ID="Email" runat="server" />
+                </InsertItemTemplate>
+            </asp:TemplateField>
+
+            <asp:CommandField ShowInsertButton="True" />
+        </Fields>
+    </asp:DetailsView>
+
+
 
     <!--Account Profile Info-->
-    <asp:DetailsView runat="server" ID="profileInfo">
+    <asp:DetailsView runat="server" ID="profileInfo" CssClass="profile">
         <Fields>
             <asp:TemplateField HeaderText="">
                 <ItemTemplate>
@@ -93,4 +132,5 @@ d.	Site security will prevent non-registered (anonymous) users
             </asp:TemplateField>           
         </Fields>
     </asp:DetailsView>
+    <asp:Label ID="dbErrorMessage" runat="server" />
 </asp:Content>
