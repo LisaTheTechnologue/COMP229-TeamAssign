@@ -64,7 +64,7 @@ namespace PersonalBookLib_TeamProject
 
         protected void RegisterUser(object sender, EventArgs e)
         {
-            register.Style.Add("display", "inline");
+            register.Style.Add("display", "unset");
             loginForm.Style.Add("display", "none");
             Page.Title = "Register";
         }
@@ -109,7 +109,7 @@ namespace PersonalBookLib_TeamProject
                 register.Style.Add("display", "none");
                 loginForm.Style.Add("display", "none");
                 Page.Title = "Profile";
-                profileInfo.Style.Add("display", "inline");
+                profileInfo.Style.Add("display", "unset");
             }
             SqlCommand comm = new SqlCommand("Select Firstname, Lastname, Password, Email, Username, ImgURl" +
                 " from Account where Username=@username and password = @password;", connection);
