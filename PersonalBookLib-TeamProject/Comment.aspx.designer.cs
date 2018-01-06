@@ -10,25 +10,16 @@
 namespace PersonalBookLib_TeamProject {
     
     
-    public partial class Details {
+    public partial class Comment {
         
         /// <summary>
-        /// myBook control.
+        /// input_form control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView myBook;
-        
-        /// <summary>
-        /// Comment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Comment;
+        protected global::System.Web.UI.HtmlControls.HtmlForm input_form;
         
         /// <summary>
         /// in_user control.
@@ -40,15 +31,6 @@ namespace PersonalBookLib_TeamProject {
         protected global::System.Web.UI.WebControls.TextBox in_user;
         
         /// <summary>
-        /// in_comment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox in_comment;
-        
-        /// <summary>
         /// submit control.
         /// </summary>
         /// <remarks>
@@ -56,14 +38,5 @@ namespace PersonalBookLib_TeamProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit;
-        
-        /// <summary>
-        /// dbErrorLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dbErrorLabel;
     }
 }

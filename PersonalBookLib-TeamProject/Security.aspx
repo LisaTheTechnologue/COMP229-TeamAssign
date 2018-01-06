@@ -37,9 +37,9 @@ d.	Site security will prevent non-registered (anonymous) users
             <div class="col-sm-offset-2 col-sm-10">
                 <asp:Button runat="server" ID="submitbtn" class="btn btn-default" onclick="SubmitUser" Text="Submit" />
             </div>
-            <div class="col-sm-offset-2 col-sm-10">
+            <%--<div class="col-sm-offset-2 col-sm-10">
                 <asp:Button runat="server" ID="registerbtn" class="btn btn-default" onclick="RegisterUser" Text="Register" />
-            </div>
+            </div>--%>
         </div>
     </div>
     
@@ -82,7 +82,7 @@ d.	Site security will prevent non-registered (anonymous) users
 
 
     <!--Account Profile Info-->
-    <asp:DetailsView runat="server" ID="profileInfo" CssClass="profile">
+    <%--<asp:DetailsView runat="server" ID="profileInfo" CssClass="profile">
         <Fields>
             <asp:TemplateField HeaderText="">
                 <ItemTemplate>
@@ -131,6 +131,6 @@ d.	Site security will prevent non-registered (anonymous) users
                 </EditItemTemplate>
             </asp:TemplateField>           
         </Fields>
-    </asp:DetailsView>
+    </asp:DetailsView>--%>
     <asp:Label ID="dbErrorMessage" runat="server" />
 </asp:Content>

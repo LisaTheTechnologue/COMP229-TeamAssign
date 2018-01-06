@@ -58,61 +58,61 @@ namespace PersonalBookLib_TeamProject
             return result;
         }
 
-        protected void RegisterUser(object sender, EventArgs e)
-        {
-            register.Style.Add("display", "inline");
-            //insert new user
-            using (connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Comp229Assign03"].ConnectionString))
-            {
-                SqlCommand comm = new SqlCommand(" INSERT INTO [dbo].Account(Firstname, Lastname, Password, Email, Username)  " +
-                "VALUES (@Firstname, @Lastname, @Password, @Email, @Username);         ", connection);
+        //protected void RegisterUser(object sender, EventArgs e)
+        //{
+        //    register.Style.Add("display", "inline");
+        //    //insert new user
+        //    using (connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Comp229Assign03"].ConnectionString))
+        //    {
+        //        SqlCommand comm = new SqlCommand(" INSERT INTO [dbo].Account(Firstname, Lastname, Password, Email, Username)  " +
+        //        "VALUES (@Firstname, @Lastname, @Password, @Email, @Username);         ", connection);
 
-                comm.Parameters.AddWithValue("@Firstname", Firstname.Text);
-                comm.Parameters.AddWithValue("@Lastname", Lastname.Text);
-                comm.Parameters.AddWithValue("@Password", Password.Text);
-                comm.Parameters.AddWithValue("@Email", Email.Text);
-                comm.Parameters.AddWithValue("@Username", Username.ToString());
+        //        comm.Parameters.AddWithValue("@Firstname", Firstname.Text);
+        //        comm.Parameters.AddWithValue("@Lastname", Lastname.Text);
+        //        comm.Parameters.AddWithValue("@Password", Password.Text);
+        //        comm.Parameters.AddWithValue("@Email", Email.Text);
+        //        comm.Parameters.AddWithValue("@Username", Username.ToString());
 
-                try
-                {
-                    connection.Open();
-                    comm.ExecuteNonQuery();
-                    dbErrorMessage.Text = "Inserted new user!";
-                }
-                catch (SqlException error)
-                {
-                    dbErrorMessage.Text += error.Message;
-                }
-                finally
-                {
-                    connection.Close();
+        //        try
+        //        {
+        //            connection.Open();
+        //            comm.ExecuteNonQuery();
+        //            dbErrorMessage.Text = "Inserted new user!";
+        //        }
+        //        catch (SqlException error)
+        //        {
+        //            dbErrorMessage.Text += error.Message;
+        //        }
+        //        finally
+        //        {
+        //            connection.Close();
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
-        protected void DisplayInfo(object sender, EventArgs e)
-        {
-            SqlCommand comm = new SqlCommand("Select Firstname, Lastname, Password, Email, Username, ImgURl" +
-                " from Account where Username=@username and password = @password;", connection);
-            try
-            {
-                connection.Open();
+        //protected void DisplayInfo(object sender, EventArgs e)
+        //{
+        //    SqlCommand comm = new SqlCommand("Select Firstname, Lastname, Password, Email, Username, ImgURl" +
+        //        " from Account where Username=@username and password = @password;", connection);
+        //    try
+        //    {
+        //        connection.Open();
 
-                //display students in the course
-                SqlDataReader reader = comm.ExecuteReader();
-                profileInfo.DataSource = reader;
-                profileInfo.DataBind();
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                dbErrorMessage.Text = ex.Message;
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
+        //        //display students in the course
+        //        SqlDataReader reader = comm.ExecuteReader();
+        //        profileInfo.DataSource = reader;
+        //        profileInfo.DataBind();
+        //        reader.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        dbErrorMessage.Text = ex.Message;
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //    }
+        //}
     }
 }

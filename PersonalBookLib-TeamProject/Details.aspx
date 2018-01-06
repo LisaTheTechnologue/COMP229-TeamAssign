@@ -148,11 +148,40 @@
     </asp:DetailsView>
     
     <h1>Comments</h1>
-    <asp:DetailsView id="Comment" runat="server">
+    <asp:GridView id="Comment" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
+        <EditRowStyle BackColor="#7C6F57" />
+        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#E3EAEB" />
+        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+        <SortedAscendingHeaderStyle BackColor="#246B61" />
+        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+        <SortedDescendingHeaderStyle BackColor="#15524A" />
 
-    </asp:DetailsView>
-   <%-- <h2>Input your comment here</h2>
-    <asp:TextBox ID="Input_comment" runat="server"></asp:TextBox>
-    <br />
-    <asp:Button ID="in_comment" runat="server" Text="Submit" OnClick="in_comment_Click" />--%>
+    </asp:GridView>
+    <h1>Add Comment</h1>
+   <table>
+         <tr>
+             <td>Input UsernameID</td>
+             <td>
+             <asp:TextBox ID="in_user" runat="server"></asp:TextBox>
+             </td>
+         </tr>
+         <tr>
+         <td>Input Comment</td>
+          <td>
+             <asp:TextBox ID="in_comment" runat="server"></asp:TextBox>
+          </td>
+         </tr>
+         <tr>
+             <td></td>
+             <td>
+             <asp:Button ID="submit" runat="server" Text="Submit" OnClick="submit_Click" />
+             </td>
+         </tr>
+     </table>
+    <asp:Label ID="dbErrorLabel" runat="server" Text=""></asp:Label>
 </asp:Content>
