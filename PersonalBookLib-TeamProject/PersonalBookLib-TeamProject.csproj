@@ -199,6 +199,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Security.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="SQL Script\project.sql" />
     <Content Include="Tracking.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
@@ -266,7 +267,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="SQL Script\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

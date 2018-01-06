@@ -176,7 +176,7 @@ namespace PersonalBookLib_TeamProject
                 {
                     conn.Close();
                 }
-                Response.Redirect("Detail.aspx");
+                Response.Redirect("Details.aspx?bookID="+ Request.QueryString["bookID"]);
             }
         }
     }
