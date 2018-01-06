@@ -141,35 +141,44 @@ namespace PersonalBookLib_TeamProject
 
         }
 
-        //protected void in_comment_Click(object sender, EventArgs e)
-        //{
-        //    int book_ISBN = Convert.ToInt32(Request.QueryString["bookID"]);
-        //    SqlConnection conn;
-        //    SqlCommand comm_book;
-        //    SqlDataReader reader;
-        //    string connectionString = ConfigurationManager.ConnectionStrings["Comp229_Project"].ConnectionString;
+        protected void submit_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                int book_ISBN = Convert.ToInt32(Request.QueryString["bookID"]);
+                SqlConnection conn;
+                SqlCommand comm_add;
+                string connectionString = ConfigurationManager.ConnectionStrings["Comp229_Project"].ConnectionString;
+                // Initialize connection
+                conn = new SqlConnection(connectionString);
+                //insert new comment into database
+                comm_add = new SqlCommand("INSERT INTO [dbo].[Comment] ([ISBN],[ACCOUNT_ID],[DESC]) VALUES(@book_ISBN, @accountID , @IN_COMMENT) ", conn);
+                // add parameter into command
+                comm_add.Parameters.Add("@book_ISBN", System.Data.SqlDbType.Int);
+                comm_add.Parameters["@book_ISBN"].Value = book_ISBN;
+                comm_add.Parameters.Add("@accountID", System.Data.SqlDbType.Int);
+                comm_add.Parameters["@accountID"].Value = Convert.ToInt32(in_user.Text);
+                comm_add.Parameters.Add("@IN_COMMENT", System.Data.SqlDbType.NVarChar, 250);
+                comm_add.Parameters["@IN_COMMENT"].Value = in_comment.Text;
+                try
+                {
+                    conn.Open();
+                    comm_add.ExecuteNonQuery();
 
-        //    // Initialize connection
-        //    conn = new SqlConnection(connectionString);
-        //    //insert new comment into database
-        //    comm_book = new SqlCommand("INSERT INTO [dbo].[Comment] ([ISBN] , [DESC]) VALUES(@book_ISBN, @IN_COMMENT) ", conn);
-        //    // add parameter into command
-        //    comm_book.Parameters.Add("@book_ISBN", System.Data.SqlDbType.Int);
-        //    comm_book.Parameters["@book_ISBN"].Value = book_ISBN;
-        //    comm_book.Parameters.Add("@IN_COMMENT", System.Data.SqlDbType.NVarChar, 250);
-        //    comm_book.Parameters["@IN_COMMENT"].Value = Input_comment.Text;
-        //    try
-        //    {
-        //        conn.Open();
-        //        comm_book.ExecuteNonQuery();
-        //        Response.Redirect("Details.aspx");
-        //    }
+                }
+                catch
+                {
+                    dbErrorLabel.Text = "Error loading for input<br />";
+                }
 
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //}
+
+                finally
+                {
+                    conn.Close();
+                }
+                Response.Redirect("Details.aspx?bookID="+ Request.QueryString["bookID"]);
+            }
+        }
     }
 }
 

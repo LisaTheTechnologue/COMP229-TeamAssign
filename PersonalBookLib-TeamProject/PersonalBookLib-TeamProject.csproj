@@ -132,6 +132,7 @@
     <Content Include="Assets\books-banner-fixed.jpg" />
     <Content Include="Assets\logo.png" />
     <Content Include="Assets\HezasLogo.png" />
+    <Content Include="Comment.aspx" />
     <Content Include="favicon.png" />
     <Content Include="Assets\logo32x32.ico" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -198,6 +199,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Security.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="SQL Script\project.sql" />
     <Content Include="Tracking.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
@@ -209,6 +211,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Comment.aspx.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comment.aspx.designer.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,7 +267,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="SQL Script\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
