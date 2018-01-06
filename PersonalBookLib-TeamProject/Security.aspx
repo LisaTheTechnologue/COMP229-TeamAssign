@@ -11,6 +11,8 @@ c.	Upon successful Login, other forms or controls will allow the user to Logout 
 d.	Site security will prevent non-registered (anonymous) users 
         from modifying any item details.
 -->
+
+    <!--Default: ASP.NET will assume the login page is Login.aspx unless we specify in <forms> tag-->
     <div id="loginForm" runat="server">
         <div class="form-group">
             <label class="control-label col-sm-2" for="userID">UserID:</label>
