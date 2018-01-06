@@ -12,10 +12,14 @@ namespace PersonalBookLib_TeamProject
 {
     public partial class Security : System.Web.UI.Page
     {
+        Boolean result = false;
         private SqlConnection connection = new SqlConnection("Server=localhost;Initial Catalog=Comp229_Project;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            pageTitle.Text = Page.Title;
+            pageTitle.Style.Add("font-size", "50px");
+            pageTitle.Style.Add("font-family", "'Amatic SC', cursive");
+            pageTitle.Style.Add("text-align", "center");
         }
         protected void SubmitUser(object sender, EventArgs e)
         {
@@ -30,7 +34,7 @@ namespace PersonalBookLib_TeamProject
         }
         protected Boolean ValidateUser(string username, string password)
         {
-            Boolean result = false;
+            
             SqlCommand comm = new SqlCommand("Select * from Account; ", connection);
             try
             {
@@ -61,17 +65,23 @@ namespace PersonalBookLib_TeamProject
         protected void RegisterUser(object sender, EventArgs e)
         {
             register.Style.Add("display", "inline");
-            //insert new user
+            loginForm.Style.Add("display", "none");
+            Page.Title = "Register";
+        }
+
+        //insert new user
+        protected void RegisteredUser(object sender, EventArgs e)
+        {
             using (connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Comp229Assign03"].ConnectionString))
             {
                 SqlCommand comm = new SqlCommand(" INSERT INTO [dbo].Account(Firstname, Lastname, Password, Email, Username)  " +
                 "VALUES (@Firstname, @Lastname, @Password, @Email, @Username);         ", connection);
 
-                comm.Parameters.AddWithValue("@Firstname", Firstname.Text);
-                comm.Parameters.AddWithValue("@Lastname", Lastname.Text);
-                comm.Parameters.AddWithValue("@Password", Password.Text);
-                comm.Parameters.AddWithValue("@Email", Email.Text);
-                comm.Parameters.AddWithValue("@Username", Username.ToString());
+                comm.Parameters.AddWithValue("@Firstname", tbFirstname.Text);
+                comm.Parameters.AddWithValue("@Lastname", tbLastname.Text);
+                comm.Parameters.AddWithValue("@Password", tbPassword.Value);
+                comm.Parameters.AddWithValue("@Email", tbEmail.Text);
+                comm.Parameters.AddWithValue("@Username", tbUsername.Text);
 
                 try
                 {
@@ -81,7 +91,7 @@ namespace PersonalBookLib_TeamProject
                 }
                 catch (SqlException error)
                 {
-                    dbErrorMessage.Text += error.Message;
+                    dbErrorMessage.Text += "<br>" + error.Message;
                 }
                 finally
                 {
@@ -93,6 +103,14 @@ namespace PersonalBookLib_TeamProject
 
         protected void DisplayInfo(object sender, EventArgs e)
         {
+
+            if (result)
+            {
+                register.Style.Add("display", "none");
+                loginForm.Style.Add("display", "none");
+                Page.Title = "Profile";
+                profileInfo.Style.Add("display", "inline");
+            }
             SqlCommand comm = new SqlCommand("Select Firstname, Lastname, Password, Email, Username, ImgURl" +
                 " from Account where Username=@username and password = @password;", connection);
             try
@@ -107,7 +125,7 @@ namespace PersonalBookLib_TeamProject
             }
             catch (Exception ex)
             {
-                dbErrorMessage.Text = ex.Message;
+                dbErrorMessage.Text += ex.Message;
             }
             finally
             {
