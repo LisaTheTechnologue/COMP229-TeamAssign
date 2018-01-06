@@ -144,5 +144,6 @@
         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#EFF3FB" />
     </asp:DetailsView>
+
    
 </asp:Content>
