@@ -109,16 +109,16 @@ namespace PersonalBookLib_TeamProject {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword tbPassword;
+        protected global::System.Web.UI.WebControls.TextBox tbPassword;
         
         /// <summary>
-        /// tbCfPassword control.
+        /// tbconfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword tbCfPassword;
+        protected global::System.Web.UI.WebControls.TextBox tbconfirmPassword;
         
         /// <summary>
         /// tbCfPasswordReq control.

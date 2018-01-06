@@ -79,7 +79,7 @@ namespace PersonalBookLib_TeamProject
 
                 comm.Parameters.AddWithValue("@Firstname", tbFirstname.Text);
                 comm.Parameters.AddWithValue("@Lastname", tbLastname.Text);
-                comm.Parameters.AddWithValue("@Password", tbPassword.Value);
+                comm.Parameters.AddWithValue("@Password", tbPassword.Text);
                 comm.Parameters.AddWithValue("@Email", tbEmail.Text);
                 comm.Parameters.AddWithValue("@Username", tbUsername.Text);
 

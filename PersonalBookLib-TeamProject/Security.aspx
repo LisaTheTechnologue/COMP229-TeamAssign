@@ -61,24 +61,24 @@ d.	Site security will prevent non-registered (anonymous) users
         <div class="form-group">
             <label class="control-label col-sm-2" for="tbPassword">Password</label>
             <div class="col-sm-10">
-                <input id="tbPassword" runat="server" type="password" required />
+                <asp:TextBox ID="tbPassword" runat="server"  />
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="tbPassword">Confirm Password</label>
             <div class="col-sm-10">
-                <input id="tbCfPassword" runat="server" type="password" required />
+                <asp:TextBox id="tbconfirmPassword" runat="server"  />
             </div>
         </div>
         <asp:RequiredFieldValidator ID="tbCfPasswordReq"
             runat="server"
-            ControlToValidate="tbCfPassword"
+            ControlToValidate="tbconfirmPassword"
             ErrorMessage="Password confirmation is required!"
             SetFocusOnError="True"
             Display="Dynamic" />
         <asp:CompareValidator ID="ComparePw" runat="server"
             ControlToCompare="tbPassword"
-            ControlToValidate="tbCfPassword"
+            ControlToValidate="tbconfirmPassword"
             ErrorMessage="Password not match"></asp:CompareValidator>
         <div class="form-group">
             <label class="control-label col-sm-2" for="tbFirstname">First Name</label>
